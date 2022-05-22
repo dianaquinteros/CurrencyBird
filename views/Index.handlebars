@@ -1,0 +1,24 @@
+<form class="col-md-6 offset-md-3 mt-2 mb-5 mt-5" method="POST" action="/invitation">
+    <div class="form-row border-bottom pb-4">
+        <div class="col">
+            <input type="email" name="email" class="form-control bg-light border-0" placeholder="Ingresar tu email" required>
+        </div>
+        <div class="col">
+            <input type="text" name="fullname" class="form-control bg-light border-0" placeholder="Nombre completo" required>
+        </div>
+    </div>
+    <div class="form-row justify-content-center">
+        <button type="submit" class="btn btn-success rounded-0 w-50 mt-4">Compartir</button>
+    </div>
+</form>
+
+{{#if invitationLink}}
+    <div class="col-md-6 offset-md-3 mt-0 mb-5 text-center">
+        <a class="text-secondary" href={{invitationLink}}>{{invitationLink}}</a>
+    </div>
+{{/if}}
+{{#if error}}
+    <div class="alert alert-danger col-md-6 offset-md-3 mt-0 mb-5 text-center" role="alert">
+        {{error}}
+    </div>
+{{/if}}

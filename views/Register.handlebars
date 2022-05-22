@@ -1,0 +1,22 @@
+<form class="col-md-6 offset-md-3 mt-2 mb-5" method="POST" action="/register/invite/{{invitationCode}}">
+    <h2 class="mb-5 text-center">Formulario de Registro</h2>
+    <input type="hidden" name="invitationCode" value={{#if invitationCode}} {{invitationCode}} {{else}} "0" {{/if}}>
+    <input type="text" name="fullname" class="form-control bg-light border-0 mb-4" placeholder="Nombre completo" required>
+    <input type="email" name="email" class="form-control bg-light border-0 mb-4" placeholder="Ingresar tu email" required>
+    <input type="text" name="address" class="form-control bg-light border-0 mb-4" placeholder="Dirección" required>
+    <select class="form-control bg-light border-0 mb-4" name="sex" placeholder="Sexo" required>
+        <option disabled selected value="">Sexo</option>
+        <option value="1">Masculino</option>
+        <option value="2">Femenino</option>
+        <option value="0">Prefiero no decirlo</option>
+        </select>
+    <div class="form-row justify-content-center">
+        <button type="submit" class="btn btn-success rounded-0 w-50 mt-4">REGISTRARSE</button>
+    </div>
+</form>
+
+ {{#if error}}
+    <div class="alert alert-danger col-md-6 offset-md-3 mt-0 mb-5 text-center" role="alert">
+        {{error}}
+    </div>
+ {{/if}}

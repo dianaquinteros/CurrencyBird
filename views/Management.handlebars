@@ -1,0 +1,24 @@
+{{#if invitations}}
+<table class="table col-md-6 offset-md-3 mt-2 mb-5 table-hover">
+    <thead class="bg-info text-light">
+        <tr>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Invitaciones</th>
+            <th scope="col">Total recibido $</th>
+        </tr>
+    </thead>
+    <tbody class="bg-light">
+        {{#each invitations}}
+        <tr>
+            <td>{{this.fullname}}</td>
+            <td>{{this.registrations}}</td>
+            <td>${{this.total}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+    <div class="alert alert-secondary  col-md-6 offset-md-3 mt-2 mb-5 text-center" role="alert">
+        Aún no existen invitaciones generadas.
+    </div>
+{{/if}}
